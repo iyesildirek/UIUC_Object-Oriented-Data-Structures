@@ -1,0 +1,4 @@
+coursera/
+*.o
+*.d
+*.out
