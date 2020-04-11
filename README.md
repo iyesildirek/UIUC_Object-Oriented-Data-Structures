@@ -1,2 +1,4 @@
-# UIUC_Object-Oriented-Data-Structures
-UIUC Object-Oriented Data Structures in C++ Coursera Course
+# University of Illinois at Urbana-Champaign 
+## Object-Oriented-Data-Structures
+### Coursera Course
+
