@@ -18,6 +18,7 @@ public:
 Pair * pairFactory() {
   // ...
   // (You can use as many lines as you want.)
+  cout << "Pair class ptr created" << endl;
   Pair * pairPtr = new Pair;
   return pairPtr;
 }
