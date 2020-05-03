@@ -3,37 +3,38 @@ CC=g++
 CPPFLAGS=-c -pedantic -Wall -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable
 ZIP_FILE = ImageTransform_submission.zip
 COLLECTED_FILES = HSLAPixel.h HSLAPixel.cpp ImageTransform.h ImageTransform.cpp
+UIUC_FILES = Provided_UIUC_Files/
 
 all: Main TEST zip
 
-Main: ImageTransform.o PNG.o lodepng.o HSLAPixel.o main.o
-	$(CC) -o  ImageTransform ImageTransform.o PNG.o lodepng.o HSLAPixel.o main.o
-	$(CC) $(CPPFLAGS) main.cpp
+Main: ImageTransform.o $(UIUC_FILES)PNG.o $(UIUC_FILES)lodepng.o HSLAPixel.o $(UIUC_FILES)main.o
+	$(CC) -o  ImageTransform ImageTransform.o $(UIUC_FILES)PNG.o $(UIUC_FILES)lodepng.o HSLAPixel.o $(UIUC_FILES)main.o
+	$(CC) $(CPPFLAGS) $(UIUC_FILES)main.cpp
 	
-ImageTransform.o: ImageTransform.cpp ImageTransform.h PNG.h HSLAPixel.h
+ImageTransform.o: ImageTransform.cpp ImageTransform.h $(UIUC_FILES)PNG.h HSLAPixel.h
 	$(CC) $(CPPFLAGS) ImageTransform.cpp
 
-PNG.o: PNG.cpp PNG.h lodepng.h HSLAPixel.h RGB_HSL.h
-	$(CC) $(CPPFLAGS) PNG.cpp
+PNG.o: $(UIUC_FILES)PNG.cpp $(UIUC_FILES)PNG.h $(UIUC_FILES)lodepng.h HSLAPixel.h $(UIUC_FILES)RGB_HSL.h
+	$(CC) $(CPPFLAGS) $(UIUC_FILES)PNG.cpp
 	
-lodepng.o: lodepng.cpp lodepng.h
-	$(CC) $(CPPFLAGS) lodepng.cpp	
+lodepng.o: $(UIUC_FILES)lodepng.cpp $(UIUC_FILES)lodepng.h
+	$(CC) $(CPPFLAGS) $(UIUC_FILES)lodepng.cpp	
 
 HSLAPixel.o: HSLAPixel.cpp HSLAPixel.h
 	$(CC) $(CPPFLAGS) HSLAPixel.cpp	
 
-TEST: PNG.o lodepng.o HSLAPixel.o ImageTransform.o part1.o part2.o catchmain.o
-	$(CC) -o  test PNG.o lodepng.o HSLAPixel.o ImageTransform.o part1.o part2.o catchmain.o
-	$(CC) $(CPPFLAGS) catchmain.cpp
+TEST: $(UIUC_FILES)PNG.o $(UIUC_FILES)lodepng.o HSLAPixel.o ImageTransform.o $(UIUC_FILES)part1.o $(UIUC_FILES)part2.o $(UIUC_FILES)catchmain.o
+	$(CC) -o  test $(UIUC_FILES)PNG.o $(UIUC_FILES)lodepng.o HSLAPixel.o ImageTransform.o $(UIUC_FILES)part1.o $(UIUC_FILES)part2.o $(UIUC_FILES)catchmain.o
+	$(CC) $(CPPFLAGS) $(UIUC_FILES)catchmain.cpp
 
-catchmain.o: catchmain.cpp catch.hpp
-	$(CC) $(CPPFLAGS) catchmain.cpp
+catchmain.o: $(UIUC_FILES)catchmain.cpp $(UIUC_FILES)catch.hpp
+	$(CC) $(CPPFLAGS) $(UIUC_FILES)catchmain.cpp
 	
-part1.o: part1.cpp catch.hpp ImageTransform.h PNG.h HSLAPixel.h
-	$(CC) $(CPPFLAGS) part1.cpp	
+part1.o: $(UIUC_FILES)part1.cpp $(UIUC_FILES)catch.hpp ImageTransform.h $(UIUC_FILES)PNG.h HSLAPixel.h
+	$(CC) $(CPPFLAGS) $(UIUC_FILES)part1.cpp	
 	
-part2.o: part2.cpp catch.hpp ImageTransform.h PNG.h HSLAPixel.h
-	$(CC) $(CPPFLAGS) part2.cpp	
+part2.o: $(UIUC_FILES)part2.cpp $(UIUC_FILES)catch.hpp ImageTransform.h $(UIUC_FILES)PNG.h HSLAPixel.h
+	$(CC) $(CPPFLAGS) $(UIUC_FILES)part2.cpp	
 
 zip:
 	@echo "!!! Preparing submission zip with student code..."

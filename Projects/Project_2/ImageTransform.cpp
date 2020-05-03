@@ -2,7 +2,7 @@
 #include <cmath>
 #include <cstdlib>
 
-#include "PNG.h"
+#include "Provided_UIUC_Files/PNG.h"
 #include "HSLAPixel.h"
 #include "ImageTransform.h"
 
@@ -11,8 +11,8 @@
 
 Write your name and email address in the comment space here:
 
-Name: Ismail Yesildirek
-Email: ismailyesildirek@gmail.com
+Name: 
+Email: 
 
 (...end multi-line comment.)
 ******************** */

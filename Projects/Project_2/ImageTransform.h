@@ -1,6 +1,6 @@
 #pragma once
 
-#include "PNG.h"
+#include "Provided_UIUC_Files/PNG.h"
 using namespace uiuc;
 
 PNG grayscale(PNG image);  
