@@ -1,5 +1,6 @@
 CC=g++
-CPPFLAGS=-c -Wall -Werror
+#CPPFLAGS=-c -Wall -Werror
+CPPFLAGS=-c -pedantic -Wall -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable
 ZIP_FILE = ImageTransform_submission.zip
 COLLECTED_FILES = HSLAPixel.h HSLAPixel.cpp ImageTransform.h ImageTransform.cpp
 
